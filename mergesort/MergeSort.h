@@ -1,9 +1,4 @@
 ﻿#pragma once
-#ifndef MergeSort
-#define MergeSort
-
-
-
 using namespace std;
 
 
@@ -56,5 +51,3 @@ void MSort(Item tablica[], int start, int koniec) {
 	delete[] tab_pom;
 
 }
-
-#endif
