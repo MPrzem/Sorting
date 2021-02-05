@@ -50,18 +50,18 @@ void Heap_Sort(Item *Array, long N)
 }
 
 template <class Item>
-void IntroSort(Item *Array, int start, int end, int M)
+void IntroSort(Item *Array, int start_index, int end_index, int M)
 {
-	if (start >= end)
+	if (start_index >= end_index)
 		return;
 	if (M <= 0) {
-		Heap_Sort(Array + start, end-start);
+		Heap_Sort(Array + start_index, end_index-start_index);
 		return;
 	}
-	int L_lim = start;
-	int R_Lim = end;
+	int L_lim = start_index;
+	int R_Lim = end_index;
 
-	int pivot = Array[(start + end) / 2]; //piwot na srodku
+	int pivot = Array[(start_index + end_index) / 2]; //piwot na srodku
 
 	do {
 		while (Array[L_lim] < pivot)
@@ -80,9 +80,9 @@ void IntroSort(Item *Array, int start, int end, int M)
 		}
 	} while (L_lim < R_Lim);
 
-	IntroSort(Array, start, R_Lim,M-1);
+	IntroSort(Array, start_index, R_Lim,M-1);
 
-	IntroSort(Array, L_lim, end,M-1);
+	IntroSort(Array, L_lim, end_index,M-1);
 
 }
 
